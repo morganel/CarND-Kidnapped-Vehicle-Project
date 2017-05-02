@@ -232,15 +232,12 @@ void ParticleFilter::resample() {
 
 }
 
-
 void ParticleFilter::write(std::string filename) {
   // You don't need to modify this file.
   std::ofstream dataFile;
-//  dataFile.open(filename, std::ios::app);
-  dataFile.open(filename, std::ios::trunc);
+  dataFile.open(filename, std::ios::app);
   for (int i = 0; i < num_particles; ++i) {
-    dataFile << particles[i].x << " " << particles[i].y << " "
-             << particles[i].theta << "\n";
+    dataFile << particles[i].x << " " << particles[i].y << " " << particles[i].theta << "\n";
   }
   dataFile.close();
 }
